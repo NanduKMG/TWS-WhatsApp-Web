@@ -7,26 +7,38 @@ var target = document.querySelector('title');
 var link = document.querySelector("link[rel='shortcut icon']") || document.createElement('link');
 
 // create an observer instance
-var observer = new MutationObserver(function(mutations) {
-    // We need only first event and only new value of the title
-    console.log("yes3");
-    console.log(mutations[0].target.nodeValue);
-    mutations[0].target.textContent="WhatsApp";
+// var observer = new MutationObserver(function(mutations) {
+//     // We need only first event and only new value of the title
+//     console.log("yes3");
+//     console.log(mutations[0].target.nodeValue);
+//     mutations[0].target.textContent="WhatsApp";
+//     var landingDiv = document.querySelector("div[class='_2MnNk'");
+//     if(landingDiv!=null){
+//         console.log("NOT NULL!");
+//         console.log(landingDiv.innerHTML);
+//         landingDiv.childNodes[0].innerHTML = "To disconnect is to live ";
+//         landingDiv.childNodes[1].innerHTML="WhatsApp is addictive. <a href=\"https://humanetech.com/problem/\" target=\"_blank\">Learn more here</a>."
+//     }
+    
+// });
+
+var linkObserver = new MutationObserver(function(mutations) {
+    //mutation removes unread chats number from title. totally uneccessary
+    //new edits
+    if(mutations[0].target.href!="https://web.whatsapp.com/favicon.ico"){
+    target.textContent="WhatsApp";
     var landingDiv = document.querySelector("div[class='_2MnNk'");
     if(landingDiv!=null){
         console.log("NOT NULL!");
         console.log(landingDiv.innerHTML);
         landingDiv.childNodes[0].innerHTML = "To disconnect is to live ";
         landingDiv.childNodes[1].innerHTML="WhatsApp is addictive. <a href=\"https://humanetech.com/problem/\" target=\"_blank\">Learn more here</a>."
+        landingDiv.childNodes[2].innerHTML="";
     }
-    
-});
-
-var linkObserver = new MutationObserver(function(mutations) {
-    //mutation removes unread chats number from title. totally uneccessary
+    //ends
     console.log("yes 4");
-    console.log(mutations[0].target.href);
-    if(mutations[0].target.href!="https://web.whatsapp.com/favicon.ico"){
+    // console.log(mutations[0].target.href);
+    
         // mutations[0].target.href = null;
         console.log("hell");
          mutations[0].target.href='favicon.ico';
@@ -43,7 +55,7 @@ var linkObserver = new MutationObserver(function(mutations) {
 var config = { subtree: true, characterData: true, childList:true };
 
 // pass in the target node, as well as the observer options
-observer.observe(target, config);
+// observer.observe(target, config);
 linkObserver.observe(link,{attributes: true,childList:true});
 
     // alert("Hello from your Chrome extension!");
