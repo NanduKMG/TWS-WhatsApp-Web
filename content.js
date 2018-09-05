@@ -19,7 +19,6 @@ var observer = new MutationObserver(function(mutations) {
         landingDiv.childNodes[0].innerHTML = "To disconnect is to live ";
         landingDiv.childNodes[1].innerHTML="WhatsApp is addictive. <a href=\"https://humanetech.com/problem/\" target=\"_blank\">Learn more here</a>."
     }
-
     
 });
 
