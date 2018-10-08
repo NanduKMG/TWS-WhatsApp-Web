@@ -10,6 +10,11 @@ html[dir] ._1FKgS::after {
     /* bubble */
     background-color: #bebebe !important;
 }
+._18tv-{
+    visibility: hidden;
+    /* whatsapp updated their prof pic class =O */
+
+}
  .dIyEr{
     /* profile/group */
     visibility: hidden;
@@ -94,7 +99,7 @@ border-color:#bebebe !important;
 
 ._1WliW{
     /* profile pic while playback video */
-    /* visibility: hidden; */
+    display: none;
     /* BUG! hides even the main profile pic :/ */
 }
 span[title="typing…"]{
@@ -130,4 +135,9 @@ progress {
   span[title="online"]{
       visibility: hidden;
       /* unecessary information */
+  }
+
+  ._1sGGp{
+      /* link expanded div color */
+      background-color: #e0dfdf !important;
   }
